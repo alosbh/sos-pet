@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOSPet.Views.CadastroEncontrado"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             Title="Cadastrar animal">
+    <ContentPage.Content>
+        <StackLayout Margin="30">
+            <Frame  HeightRequest="100" BackgroundColor="#d5d5d5">
+                <StackLayout>
+                    <Image Source="camera.png"></Image>
+                    <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos"></Label>
+                </StackLayout>
+                
+            </Frame>
+
+                <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="Espécie"></Label>
+                    <Picker Title="Espécie" x:Name="Espécie">
+                                <Picker.Items>
+                                    <x:String>Cachorro</x:String>
+                                    <x:String>Gato</x:String>
+                                    <x:String>Aves</x:String>
+                                    <x:String>Roedores</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="Porte"></Label>
+                    <Picker Title="Porte" x:Name="Porte" >
+                                <Picker.Items>
+                                    <x:String>Grande</x:String>
+                                    <x:String>Medio</x:String>
+                                    <x:String>Pequeno</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label Text="Localizado"></Label>
+                            <DatePicker>
+
+                            </DatePicker>
+                        </StackLayout>
+
+                
+                </StackLayout>
+
+            <StackLayout>
+                <Label Text="Descrição"></Label>
+                <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Selecione a localização:"></Label>
+                <maps:Map x:Name="Mapa" MapType="Street" 
+               
+              IsShowingUser="true"
+                      HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        HeightRequest="200"
+                      >
+
+                </maps:Map>
+            </StackLayout>
+            
+            
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOSPet.Views.LoginView"
+             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+        <StackLayout VerticalOptions="Center" Margin="40">
+            <Image Source="pawprint.png" ></Image>
+        <Label Text="SOS PET" FontSize="24" HorizontalOptions="Center" FontFamily="Roboto" FontAttributes="Bold"></Label>
+            
+            <Entry Placeholder="Usuário" Text="{Binding Usuario}" ></Entry>
+            <Entry Placeholder="Senha" Text="{Binding Senha}" IsPassword="True"></Entry>
+            <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
+
+                <StackLayout Orientation="Horizontal">
+                    <Switch IsToggled="True"></Switch>
+                    <Label VerticalTextAlignment="Center" Text="Lembrar"></Label>
+                </StackLayout>
+
+            <Label Text="Esqueci a Senha" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center">
+                <!--<Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="IrParaTelaRecuperarSenha"></TapGestureRecognizer>
+                        </Label.GestureRecognizers>-->
+            </Label>
+
+        </StackLayout>
+
+        <Button Text="Login" Command="{Binding EntrarCommand}"></Button>
+            <Label Text="Não tenho cadastro" HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding IrCadastroCommand}"></TapGestureRecognizer>
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </StackLayout>
+    
+</ContentPage>

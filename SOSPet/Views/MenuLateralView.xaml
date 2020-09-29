@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOSPet.Views.MenuLateralView"
+             Title="Menu Lateral"
+             xmlns:local="clr-namespace:GradientColor; assembly:GradientColor">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+            <StackLayout BackgroundColor="#2fdf8d" Padding="20,50, 20, 20 ">
+                
+                <Image HorizontalOptions="StartAndExpand" Source="user.png" Margin="0,0, 0, 20"></Image>
+                <Label Text="Nome do usuário"
+           FontSize="Medium"
+           FontAttributes="Bold" />
+                <Label Text="email@email.com"
+           FontSize="14"
+           FontAttributes="Bold" />
+              
+                
+            </StackLayout>
+
+            <StackLayout Padding="20,10, 20, 0">
+                
+                
+                <Button ImageSource="home.png" Text="Pagina Inicial"></Button>
+                <Button ImageSource="avatar.png" Text="Meus Dados"></Button>
+                <Button ImageSource="list.png" Text="Minhas Ocorrências"></Button>
+                <Button ImageSource="placeholder.png" Text="Explorer"></Button>
+                <Button ImageSource="info.png" Text="Sobre"></Button>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
