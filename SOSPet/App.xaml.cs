@@ -13,8 +13,8 @@ namespace SOSPet
         {
             InitializeComponent();
 
-           
 
+            //MainPage = new NavigationPage(new DetalheEncontrado("a"));
             MainPage = new NavigationPage(new LoginView());
         }
 
