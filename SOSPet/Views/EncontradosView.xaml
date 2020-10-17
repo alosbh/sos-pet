@@ -69,7 +69,7 @@
                     </Image.GestureRecognizers>
                 </Image>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                    <Label Text="Ir Para Animais Encontrados" VerticalTextAlignment="Center" FontSize="16"></Label>
+                    <Label Text="Ir Para Animais Procurados" VerticalTextAlignment="Center" FontSize="16"></Label>
                     <Image Source="right.png"></Image>
                 </StackLayout>
                 
