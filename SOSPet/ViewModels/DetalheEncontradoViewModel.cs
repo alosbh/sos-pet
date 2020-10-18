@@ -6,5 +6,11 @@ namespace SOSPet.ViewModels
 {
     public class DetalheEncontradoViewModel
     {
+        public string nome { get; set; }
+
+        public DetalheEncontradoViewModel(string Nome)
+        {
+            this.nome = Nome;
+        }
     }
 }

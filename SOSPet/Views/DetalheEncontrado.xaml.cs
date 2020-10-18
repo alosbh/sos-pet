@@ -17,6 +17,7 @@ namespace SOSPet.Views
         public DetalheEncontrado(string Nome)
         {
             InitializeComponent();
+            this.BindingContext = new DetalheEncontradoViewModel("Juninho");
         }
     }
 }

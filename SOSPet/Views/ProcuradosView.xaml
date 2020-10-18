@@ -59,9 +59,9 @@
 
                         </Image.GestureRecognizers>
                     </Image>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Image Source="left.png"></Image>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">                        
                         <Label Text="Ir Para Animais Abandonados" VerticalTextAlignment="Center" FontSize="16"></Label>
+                        <Image Source="right.png"></Image>
                     </StackLayout>
                 </StackLayout>
 
