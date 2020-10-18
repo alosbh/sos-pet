@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SOSPet.ViewModels
 {
-    public class DetalheEncontradoViewModel
+    class ProcuradosViewModel
     {
     }
 }

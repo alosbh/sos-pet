@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SOSPet.Views.EncontradosView"
+             x:Class="SOSPet.Views.ProcuradosView"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             Title="Animais Abandonados Encontrados"
+             Title="Animais Desaparecidos Encontrados"
              xmlns:vm="clr-namespace:SOSPet.ViewModels">
-
+    
     <ContentPage.BindingContext>
-        <vm:EncontradosViewModel></vm:EncontradosViewModel>
+        <vm:ProcuradosViewModel></vm:ProcuradosViewModel>
     </ContentPage.BindingContext>
 
-    <ContentPage.Content >
+    <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="32">
-                <Label Text="Navegue abaixo e veja os animais abandonados encontrados em sua regição" FontSize="16"></Label>
+                <Label Text="Navegue abaixo e veja os animais desaparecidos encontrados em sua regição" FontSize="16"></Label>
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,3">
 
                     <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" >
@@ -26,23 +26,19 @@
                         <Label Text="Filtrar" VerticalTextAlignment="Center" FontSize="16"></Label>
                         <Image Source="filter.png"></Image>
                     </StackLayout>
-
-
-
-
+                    
                 </StackLayout>
 
                 <!--<Grid>-->
-                <maps:Map x:Name="Mapa" MapType="Street" 
-               
-              IsShowingUser="true"
-                      HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        HeightRequest="400"
-                      >
-
+                <maps:Map x:Name="Mapa" MapType="Street"                
+                    IsShowingUser="true"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="400">
                 </maps:Map>
-                <!--<AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <!--
+                <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <Image Source="plus.png"  AbsoluteLayout.LayoutBounds="0.05, 0.90, 50, 50" AbsoluteLayout.LayoutFlags="PositionProportional">
                         <Image.GestureRecognizers>
 
@@ -52,9 +48,8 @@
                     </Image>
                     
                 </AbsoluteLayout>
-            </Grid>-->
-
-
+                </Grid
+                -->
 
                 <StackLayout Orientation="Horizontal"  HorizontalOptions="Fill" Margin="0,20,0,0">
                     <Image Source="plus.png"  AbsoluteLayout.LayoutBounds="0.05, 0.90, 50, 50" AbsoluteLayout.LayoutFlags="PositionProportional">
@@ -65,10 +60,9 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Label Text="Ir Para Animais Desaparecidos" VerticalTextAlignment="Center" FontSize="16"></Label>
-                        <Image Source="right.png"></Image>
+                        <Image Source="left.png"></Image>
+                        <Label Text="Ir Para Animais Abandonados" VerticalTextAlignment="Center" FontSize="16"></Label>
                     </StackLayout>
-
                 </StackLayout>
 
             </StackLayout>

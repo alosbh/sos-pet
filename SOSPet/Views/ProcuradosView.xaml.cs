@@ -1,22 +1,25 @@
-﻿using SOSPet.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Forms.Maps;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SOSPet.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetalheEncontrado : ContentPage
+    public partial class ProcuradosView : ContentPage
     {
-        public string nome;
-        public DetalheEncontrado(string Nome)
+        public ProcuradosView()
         {
             InitializeComponent();
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CadastroProcurado());
         }
     }
 }
