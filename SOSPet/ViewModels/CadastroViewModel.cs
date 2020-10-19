@@ -17,44 +17,44 @@ namespace SOSPet.ViewModels
         {
             get
             {
-                return usuario.email;
+                return usuario.Email;
             }
             set
             {
-                usuario.email = value;
+                usuario.Email = value;
             }
         }
         public string Nome
         {
             get
             {
-                return usuario.nome;
+                return usuario.Nome;
             }
             set
             {
-                usuario.nome = value;
+                usuario.Nome = value;
             }
         }
         public string Telefone
         {
             get
             {
-                return usuario.telefone;
+                return usuario.Telefone;
             }
             set
             {
-                usuario.telefone = value;
+                usuario.Telefone = value;
             }
         }
         public string Senha
         {
             get
             {
-                return usuario.senha;
+                return usuario.Senha;
             }
             set
             {
-                usuario.senha = value;
+                usuario.Senha = value;
             }
         }
         public ICommand ConcluirCadastroCommand { get; private set; }

@@ -15,7 +15,8 @@ namespace SOSPet
 
            
 
-            MainPage = new NavigationPage(new LoginView());
+            //MainPage = new NavigationPage(new LoginView());
+            MainPage = new NavigationPage(new EncontradosView());
         }
 
         protected override void OnStart()

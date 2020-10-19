@@ -1,10 +1,14 @@
-﻿using SOSPet.Models;
+﻿using Json.Net;
+using Newtonsoft.Json;
+using Flurl;
+using SOSPet.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SOSPet.Services
 {
@@ -14,31 +18,41 @@ namespace SOSPet.Services
         {
 
 
-            using (var cliente = new HttpClient())
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            using (var cliente = new HttpClient(clientHandler))
 
             {
 
-                var camposFormulario = new FormUrlEncodedContent(new[] {
+                string jsonObj = JsonNet.Serialize(login);
+                var httpContent = new StringContent(jsonObj, Encoding.UTF8, "application/json");
 
-                    new KeyValuePair<string,string>("email", login.email),
-                    new KeyValuePair<string,string>("senha", login.senha)
-
-                });
-                cliente.BaseAddress = new Uri("https://localhost:3015");
+                cliente.BaseAddress = new Uri("https://192.168.0.22:45455");
                 HttpResponseMessage response = null;
-                //try
-                //{
-                //    response = await cliente.PostAsync("/login", camposFormulario);
-                //}
-                //catch
-                //{
+                string textoresponse;
+                try
+                {
+                    response = await cliente.PostAsync("/api/login", httpContent);
+                    
 
-                //    MessagingCenter.Send<LoginException>(new LoginException("Erro de comunicação"), "FalhaLogin");
-                //}
-                //if (response.IsSuccessStatusCode)
+                }
+                catch
+                {
+
+                    MessagingCenter.Send<LoginException>(new LoginException("Erro de comunicação"), "FalhaLogin");
+                }
+                if (response.IsSuccessStatusCode)
                     MessagingCenter.Send<Login>(login, "SucessoLogin");
-                //else
-                //    MessagingCenter.Send<LoginException>(new LoginException("Usuario ou senha errado"), "FalhaLogin");
+                else
+                {
+                    textoresponse = await response.Content.ReadAsStringAsync();
+                    
+                    LoginError resJ = JsonConvert.DeserializeObject<LoginError>(textoresponse);
+                    
+                    
+                    MessagingCenter.Send<LoginException>(new LoginException(resJ.message), "FalhaLogin");
+                }
+                   
 
 
             }
@@ -50,34 +64,39 @@ namespace SOSPet.Services
         public async Task FazerCadastro(Usuario usuario)
         {
 
-
-            using (var cliente = new HttpClient())
+            HttpClientHandler clientHandler = new HttpClientHandler();
+            clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
+            using (var cliente = new HttpClient(clientHandler))
 
             {
-
-                var camposFormulario = new FormUrlEncodedContent(new[] {
-
-                    new KeyValuePair<string,string>("email", usuario.email),
-                    new KeyValuePair<string,string>("senha", usuario.senha),
-                    new KeyValuePair<string,string>("nome", usuario.nome),
-                    new KeyValuePair<string,string>("telefone", usuario.telefone)
-
-                });
-                cliente.BaseAddress = new Uri("https://localhost:3015");
+                string jsonObj = JsonNet.Serialize(usuario);
+                var httpContent = new StringContent(jsonObj, Encoding.UTF8, "application/json");
+               
+                cliente.BaseAddress = new Uri("https://192.168.0.22:45455");
                 HttpResponseMessage response = null;
-                //try
-                //{
-                //    response = await cliente.PostAsync("/cadastro", camposFormulario);
-                //}
-                //catch
-                //{
-
-                //    MessagingCenter.Send<LoginException>(new LoginException("Erro de comunicação"), "FalhaLogin");
-                //}
-                //if (response.IsSuccessStatusCode)
-                MessagingCenter.Send<Usuario>(usuario, "SucessoCadastro");
-                //else
-                //    MessagingCenter.Send<LoginException>(new LoginException("Usuario ou senha errado"), "FalhaLogin");
+                try
+                {
+                    
+                   
+                    response = await cliente.PostAsync("/api/usuarios",httpContent);
+                }
+                catch (System.Exception e)
+                {
+                    System.Exception erro = e.InnerException;
+                    MessagingCenter.Send<LoginException>(new LoginException("Erro de comunicação"), "FalhaCadastro");
+                }
+                var resCode = (int)response.StatusCode;
+                if (response.IsSuccessStatusCode)
+                    MessagingCenter.Send<Usuario>(usuario, "SucessoCadastro");
+                else if(resCode == 409)
+                {
+                    MessagingCenter.Send<LoginException>(new LoginException("Email ja cadastrado no sistema."), "FalhaCadastro");
+                }
+                else
+                {
+                    MessagingCenter.Send<LoginException>(new LoginException("Erro Desconhecido"), "FalhaCadastro");
+                }
+                    
 
 
             }
@@ -89,9 +108,19 @@ namespace SOSPet.Services
 
     public class LoginException : Exception
     {
+        
         public LoginException(string message) : base(message)
         {
+            
+        }
+    }
 
+    public class LoginError
+    {
+        public string message { get; set; }
+        public LoginError(string msg="default")
+        {
+            this.message = msg;
         }
     }
 }

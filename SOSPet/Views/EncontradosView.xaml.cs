@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.Maps;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,13 +13,12 @@ namespace SOSPet.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EncontradosView : ContentPage
     {
-        public EncontradosView()
+         public EncontradosView()
         {
             InitializeComponent();
-            //<meta-data android:name = "com.google.android.geo.API_KEY" android:value = "AIzaSyDeOU95k5fdg54ei2adWxd9WXm8xXEnmlA"/>
-                   Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(
-                             new Position(-19.947316, -43.971500),
-                             Distance.FromKilometers(0.5)));
+
+            irParaLocation();
+            
 
 
             var pin = new Pin
@@ -59,6 +58,39 @@ namespace SOSPet.Views
                 Navigation.PushAsync(new DetalheEncontrado(pin3.Label));
             };
             Mapa.Pins.Add(pin3);
+        }
+
+        public async void irParaLocation()
+        {
+            try
+            {
+                var location = await Geolocation.GetLastKnownLocationAsync();
+
+                if (location != null)
+                {
+                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                    Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(
+                             new Position(location.Latitude, location.Longitude),
+                             Distance.FromKilometers(0.5)));
+                }
+            }
+            catch (FeatureNotSupportedException fnsEx)
+            {
+                // Handle not supported on device exception
+            }
+            catch (FeatureNotEnabledException fneEx)
+            {
+                // Handle not enabled on device exception
+            }
+            catch (PermissionException pEx)
+            {
+                // Handle permission exception
+            }
+            catch (Exception ex)
+            {
+                // Unable to get location
+            }
+
         }
         protected override void OnAppearing()
         {

@@ -1,4 +1,5 @@
 ﻿using SOSPet.Models;
+using SOSPet.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,13 @@ namespace SOSPet.Views
 
             MessagingCenter.Subscribe<Usuario>(this, "SucessoCadastro", (user) =>
             {
-                DisplayAlert("Cadastro", String.Format(
-                   @"Email:{0}
-Nome: {1}
-Telefone: {2}
-", user.email, user.nome,user.telefone), "ok");
+                DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "Ok");
+                Navigation.PopAsync();
+            });
+
+            MessagingCenter.Subscribe<LoginException>(this, "FalhaCadastro", (e) => {
+
+                DisplayAlert("Falha no Cadastro", e.Message, "Ok");
             });
 
 
@@ -38,6 +41,7 @@ Telefone: {2}
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<Usuario>(this, "SucessoCadastro");
+            MessagingCenter.Unsubscribe<LoginException>(this, "FalhaCadastro");
         }
     }
 }
