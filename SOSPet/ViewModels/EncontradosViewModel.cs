@@ -12,6 +12,7 @@ namespace SOSPet.ViewModels
         public ICommand CadastrarEncontrado;
 
         public CadastroEncontrado telaCadastro;
+
         public EncontradosViewModel()
         {
             telaCadastro = new CadastroEncontrado();
@@ -20,7 +21,9 @@ namespace SOSPet.ViewModels
                 MessagingCenter.Send<CadastroEncontrado>(telaCadastro, "irCadastroEncontrado");
             });
 
-
+            
         }
+
+
     }
 }

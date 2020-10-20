@@ -12,7 +12,7 @@ namespace SOSPet.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalheProcurado : ContentPage
     {
-        public DetalheProcurado()
+        public DetalheProcurado(string label)
         {
             InitializeComponent();
         }

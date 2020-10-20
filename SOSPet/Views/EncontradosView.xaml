@@ -65,8 +65,21 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
-                        <Label Text="Ir Para Animais Desaparecidos" VerticalTextAlignment="Center" FontSize="16"></Label>
-                        <Image Source="right.png"></Image>
+                        <Label Text="Ir Para Animais Desaparecidos" VerticalTextAlignment="Center" FontSize="16">
+                            <Label.GestureRecognizers>
+                                
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                                
+                            </Label.GestureRecognizers>
+                            
+                        </Label>
+                        <Image Source="right.png">
+                            <Image.GestureRecognizers>
+
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
+                                
+                            </Image.GestureRecognizers>
+                        </Image>
                     </StackLayout>
 
                 </StackLayout>
