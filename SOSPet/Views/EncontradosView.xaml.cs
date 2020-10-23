@@ -107,9 +107,15 @@ namespace SOSPet.Views
             MessagingCenter.Unsubscribe<CadastroEncontrado>(this, "irCadastroEncontrado");
         }
 
+        
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new CadastroEncontrado());
+        }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProcuradosView());
         }
     }
 }
