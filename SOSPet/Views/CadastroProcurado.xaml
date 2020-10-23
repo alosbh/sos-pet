@@ -1,26 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SOSPet.Views.CadastroEncontrado"
+             x:Class="SOSPet.Views.CadastroProcurado"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             Title="Cadastrar Animal Abandonado"
+             Title="Cadastrar Animal Desaparecido"
              xmlns:vm="clr-namespace:SOSPet.ViewModels">
 
     <ContentPage.BindingContext>
-        <vm:CadastroEncontradoViewModel></vm:CadastroEncontradoViewModel>
+        <vm:CadastroProcuradoViewModel></vm:CadastroProcuradoViewModel>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="30">
+                <!-- Imagem Início -->
                 <Frame  HeightRequest="100" BackgroundColor="#d5d5d5">
                     <StackLayout>
                         <Image Source="camera.png"></Image>
                         <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos"></Label>
                     </StackLayout>
-
                 </Frame>
+                <!-- Imagem Final -->
 
+                <!-- Informações Início -->
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Espécie:"></Label>
@@ -45,32 +47,34 @@
                         </Picker>
                     </StackLayout>
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Localizado em:"></Label>
+                        <Label Text="Desaparecido em:"></Label>
                         <DatePicker>
 
                         </DatePicker>
                     </StackLayout>
-
-
                 </StackLayout>
 
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Atende pelo nome de:"/>
+                    <Editor MinimumHeightRequest="40" Placeholder="Exemplo: Juninho"/>                    
+                </StackLayout>
+                <!-- Informações Final -->
+
+                <!-- Descrição e Localização Início -->
                 <StackLayout>
                     <Label Text="Descrição"></Label>
                     <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." />
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Selecione a localização:"></Label>
-                    <maps:Map x:Name="Mapa" MapType="Street" 
-               
-              IsShowingUser="true"
-                      HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        HeightRequest="200"
-                      >
-
+                    <maps:Map x:Name="Mapa" MapType="Street"                
+                        IsShowingUser="true"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                        HeightRequest="200">
                     </maps:Map>
                 </StackLayout>
-
+                <!-- Descrição e Localização Final -->
 
 
 
