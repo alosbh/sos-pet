@@ -11,7 +11,6 @@ namespace SOSPet.Models
         public string senha { get; set; }
         public string telefone { get; set; }
         public string email { get; set; }
-
         public string foto { get; set; }
     }
 }

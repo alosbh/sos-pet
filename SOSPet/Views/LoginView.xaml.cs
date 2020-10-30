@@ -31,10 +31,10 @@ namespace SOSPet.Views
 
             MessagingCenter.Subscribe<Login>(this, "SucessoLogin", (login) =>
             {
-//                DisplayAlert("Login", String.Format(
-//                   @"Usuario:{0}
-//Senha:{1}
-//", login.email, login.senha), "ok");
+//                  DisplayAlert("Login", String.Format(
+//                  @"Usuario:{0}
+//                  Senha:{1}
+//                  ", login.email, login.senha), "ok");
 
                 MessagingCenter.Send<Login>(login, "NavegarInicial");
 

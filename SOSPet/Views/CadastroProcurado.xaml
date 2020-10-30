@@ -76,7 +76,9 @@
                 </StackLayout>
                 <!-- Descrição e Localização Final -->
 
-
+                <StackLayout>
+                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroProcuradoCommand}"></Button>
+                </StackLayout>
 
 
             </StackLayout>
