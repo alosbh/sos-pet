@@ -8,6 +8,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
 using Xamarin.Forms.Maps;
 using System.Windows.Input;
+using SOSPet.Services;
 
 namespace SOSPet.Views
 {
@@ -55,6 +56,5 @@ namespace SOSPet.Views
                 await DisplayAlert("Erro", "Não foi possível localizar", "Ok");
             }
         }
-
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 
@@ -27,8 +28,8 @@ namespace SOSPet.Services
                     new KeyValuePair<string,string>("status", ocorrenciaanimalencontrado.status),
                     new KeyValuePair<string,string>("tipo", ocorrenciaanimalencontrado.tipo),
                     new KeyValuePair<string,string>("descricao", ocorrenciaanimalencontrado.descricao),
-                    //new KeyValuePair<>("localizacao", ocorrenciaanimalencontrado.localizacao),
-                    //new KeyValuePair<string,string>("data_ocorrencia", ocorrenciaanimalencontrado.data_ocorrencia)
+                    //new KeyValuePair<string,Location>("localizacao", ocorrenciaanimalencontrado.localizacao),
+                    //new KeyValuePair<string,DateTime>("data_ocorrencia", ocorrenciaanimalencontrado.data_ocorrencia)
 
                 });
                 cliente.BaseAddress = new Uri("https://localhost:3015");

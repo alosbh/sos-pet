@@ -62,9 +62,9 @@
                 
                 <StackLayout>
                     <Label Text="Selecione a localização:"></Label>
-                    <maps:Map x:Name="Mapa" MapType="Street" 
+                    <maps:Map x:Name="Mapa" MapType="Street" Tap="Mapa_OnTap"
+                    IsShowingUser="true"                               
                     ItemsSource="{Binding Localizacao}"
-                    IsShowingUser="true"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     HeightRequest="200"
