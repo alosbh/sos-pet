@@ -18,11 +18,9 @@ namespace SOSPet.ViewModels
             get { return usuario; }
             set
             {
-
                 usuario = value;
                 ((Command)EntrarCommand).ChangeCanExecute();
                 OnPropertyChanged();
-
             }
         }
 
