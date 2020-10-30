@@ -8,6 +8,8 @@
              xmlns:local="clr-namespace:PinClickDemo"
              >
 
+    
+
     <ContentPage.BindingContext>
         <vm:CadastroEncontradoViewModel></vm:CadastroEncontradoViewModel>
     </ContentPage.BindingContext>
@@ -27,7 +29,7 @@
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Espécie:"></Label>
-                        <Picker Title="Espécie" x:Name="Espécie">
+                        <Picker Title="Espécie" x:Name="Espécie" SelectedItem="{Binding Especie}" >
                             <Picker.Items>
                                 <x:String>Cachorro</x:String>
                                 <x:String>Gato</x:String>
@@ -39,11 +41,11 @@
 
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Porte:"></Label>
-                        <Picker Title="Porte" x:Name="Porte" >
+                        <Picker Title="Porte" x:Name="Porte" SelectedItem="{Binding Porte}" >
                             <Picker.Items>
-                                <x:String>Grande</x:String>
-                                <x:String>Medio</x:String>
-                                <x:String>Pequeno</x:String>
+                                <x:String>G</x:String>
+                                <x:String>M</x:String>
+                                <x:String>P</x:String>
                             </Picker.Items>
                         </Picker>
                     </StackLayout>
@@ -53,14 +55,27 @@
 
                         </DatePicker>
                     </StackLayout>
+                    
 
 
                 </StackLayout>
-
                 <StackLayout>
-                    <Label Text="Descrição"></Label>
-                    <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." />
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout>
+                            <Label Text="Raça:"></Label>
+                            <Entry Placeholder="SRD, Siamês, Golden" Text="{Binding Raca}"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label Text="Descrição:"></Label>
+                            <Entry Placeholder="Cadela fêmea encontrada proximo ao parque ecológico." Text="{Binding Descricao}"/>
+                        </StackLayout>
+                    </StackLayout>
                 </StackLayout>
+
+                <!--<StackLayout>
+                    <Label Text="Descrição"></Label>
+                    <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." Text="{Binding Descricao}"/>
+                </StackLayout>-->
                 <StackLayout>
                     <Label Text="Selecione a localização:"></Label>
                     
@@ -76,6 +91,10 @@
                     </local:ExtendedMap>
 
                     
+                </StackLayout>
+
+                <StackLayout>
+                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroCommand}"></Button>
                 </StackLayout>
 
 

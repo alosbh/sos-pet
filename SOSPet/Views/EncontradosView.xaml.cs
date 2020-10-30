@@ -116,7 +116,7 @@ namespace SOSPet.Views
                     var pin = new Pin
                     {
                         Type = PinType.Place,
-                        Position = new Position(ocorr.localizacao_lat, -ocorr.localizacao_long),
+                        Position = new Position(ocorr.latitude, ocorr.longitude),
                         Label = ocorr.descricao,
 
                     };

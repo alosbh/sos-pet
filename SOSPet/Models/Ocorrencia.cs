@@ -9,9 +9,14 @@ namespace SOSPet.Models
         public string status { get; set; }
         public string tipo { get; set; }
         public string descricao { get; set; }
-        public float localizacao_lat { get; set; }
-        public float localizacao_long { get; set; }
+       
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+       
         public DateTime data_ocorrencia { get; set; }
+
+        public Animal animal;
+        public Localizacao posicao;
 
     }
 }

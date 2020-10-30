@@ -1,4 +1,6 @@
 ﻿using PinClickDemo;
+using SOSPet.Models;
+using SOSPet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -17,16 +19,17 @@ namespace SOSPet.Views
     public partial class CadastroEncontrado : ContentPage
     {
         //private ExtendedMap Mapa;
+        //public ViewModels = new CadastroEncontradoViewModel();
         public CadastroEncontrado()
         {
             InitializeComponent();
-            
 
+            //this.BindingContext = new CadastroEncontradoViewModel();
             //Mapa = new ExtendedMap();
             //Mapa.Tap += Mapa_OnTap;
             //Mapa.HeightRequest = 200;
             //Mapa.IsShowingUser = true;
-            
+
             //Content = Mapa;
         }
 
@@ -40,7 +43,14 @@ namespace SOSPet.Views
                 Address = e.Position.Latitude + " X " + e.Position.Latitude,
             };
 
+            foreach (var p in Mapa.Pins){
+                Mapa.Pins.Remove(p);
+            }
+
             Mapa.Pins.Add(pin);
+
+            MessagingCenter.Send<Pin>(pin, "NovoCliquePin");
+
         }
         public async void irParaLocation()
         {
@@ -55,7 +65,7 @@ namespace SOSPet.Views
                 new Position(location.Latitude, location.Longitude),
                 Distance.FromMiles(0.5)));
 
-
+                    
                 }
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -84,11 +94,20 @@ namespace SOSPet.Views
             MessagingCenter.Subscribe<object>(this, "MapaFull", (obj) => {
                 irParaLocation();
             });
+
+            MessagingCenter.Subscribe<Ocorrencia>(this, "SucessoCadastroEncontrado", (user) =>
+            {
+                DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "Ok");
+                Navigation.PopAsync();
+            });
         }
 
         protected override void OnDisappearing()
         {
             MessagingCenter.Unsubscribe<object>(this, "MapaFull");
+            MessagingCenter.Unsubscribe<Ocorrencia>(this, "SucessoCadastroEncontrado");
         }
+
+       
     }
 }
