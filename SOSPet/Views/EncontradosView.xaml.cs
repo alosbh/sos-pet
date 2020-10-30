@@ -7,15 +7,21 @@ using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using SOSPet.Services;
+using SOSPet.Models;
+using System.Diagnostics;
 
 namespace SOSPet.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EncontradosView : ContentPage
     {
-         public EncontradosView()
+        public System.Collections.ObjectModel.ObservableCollection<Ocorrencia> Ocorrencias { get; set; }
+        public EncontradosView()
         {
             InitializeComponent();
+
+            this.Ocorrencias = new System.Collections.ObjectModel.ObservableCollection<Ocorrencia>();
 
             irParaLocation();
             
@@ -99,12 +105,36 @@ namespace SOSPet.Views
             {
                 Navigation.PushAsync(tela);
             });
+
+            MessagingCenter.Subscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias", (ocorrencias) =>
+            {
+
+                foreach (var ocorr in Ocorrencias)
+                {
+                    var pin = new Pin
+                    {
+                        Type = PinType.Place,
+                        Position = new Position(ocorr.localizacao_lat, -ocorr.localizacao_long),
+                        Label = ocorr.descricao,
+
+                    };
+                    pin.MarkerClicked += (sender, e) => {
+
+                        Navigation.PushAsync(new DetalheEncontrado(pin.Label));
+                    };
+                    Mapa.Pins.Add(pin);
+                }
+
+
+                
+            });
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<CadastroEncontrado>(this, "irCadastroEncontrado");
+            MessagingCenter.Unsubscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias");
         }
 
         

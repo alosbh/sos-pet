@@ -14,9 +14,10 @@ namespace SOSPet.Services
 {
     public class LoginService
     {
+        private readonly string baseUrl = "http://192.168.0.5:5000";
         public async Task FazerLogin(Login login)
         {
-
+            
 
             HttpClientHandler clientHandler = new HttpClientHandler();
             clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
@@ -27,7 +28,7 @@ namespace SOSPet.Services
                 string jsonObj = JsonNet.Serialize(login);
                 var httpContent = new StringContent(jsonObj, Encoding.UTF8, "application/json");
 
-                cliente.BaseAddress = new Uri("https://192.168.0.22:45455");
+                cliente.BaseAddress = new Uri(baseUrl);
                 HttpResponseMessage response = null;
                 string textoresponse;
                 try
@@ -72,7 +73,7 @@ namespace SOSPet.Services
                 string jsonObj = JsonNet.Serialize(usuario);
                 var httpContent = new StringContent(jsonObj, Encoding.UTF8, "application/json");
                
-                cliente.BaseAddress = new Uri("https://192.168.0.22:45455");
+                cliente.BaseAddress = new Uri(baseUrl);
                 HttpResponseMessage response = null;
                 try
                 {
@@ -82,7 +83,7 @@ namespace SOSPet.Services
                 }
                 catch (System.Exception e)
                 {
-                    System.Exception erro = e.InnerException;
+                   System.Exception erro = e.InnerException;
                     MessagingCenter.Send<LoginException>(new LoginException("Erro de comunicação"), "FalhaCadastro");
                 }
                 var resCode = (int)response.StatusCode;

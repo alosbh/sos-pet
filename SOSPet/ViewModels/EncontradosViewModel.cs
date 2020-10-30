@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using SOSPet.Services;
+using SOSPet.Models;
 
 namespace SOSPet.ViewModels
 {
@@ -16,11 +18,16 @@ namespace SOSPet.ViewModels
         public EncontradosViewModel()
         {
             telaCadastro = new CadastroEncontrado();
+
+            var ocorrenciasService = new OcorrenciasService();
             CadastrarEncontrado = new Command(() => {
 
                 MessagingCenter.Send<CadastroEncontrado>(telaCadastro, "irCadastroEncontrado");
             });
 
+
+            ocorrenciasService.getEncontrados();
+           
             
         }
 
