@@ -4,7 +4,9 @@
              x:Class="SOSPet.Views.CadastroEncontrado"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              Title="Cadastrar Animal Abandonado"
-             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+             xmlns:vm="clr-namespace:SOSPet.ViewModels"
+             xmlns:local="clr-namespace:PinClickDemo"
+             >
 
     <ContentPage.BindingContext>
         <vm:CadastroEncontradoViewModel></vm:CadastroEncontradoViewModel>
@@ -12,6 +14,7 @@
     
     <ContentPage.Content>
         <ScrollView>
+            
             <StackLayout Margin="30">
                 <Frame  HeightRequest="100" BackgroundColor="#d5d5d5">
                     <StackLayout>
@@ -20,7 +23,7 @@
                     </StackLayout>
 
                 </Frame>
-
+                
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Espécie:"></Label>
@@ -60,15 +63,19 @@
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Selecione a localização:"></Label>
-                    <maps:Map x:Name="Mapa" MapType="Street" 
+                    
+                    <local:ExtendedMap x:Name="Mapa" MapType="Street" 
                
               IsShowingUser="true"
                       HorizontalOptions="FillAndExpand"
         VerticalOptions="FillAndExpand"
         HeightRequest="200"
+        Tap="Mapa_OnTap"
                       >
 
-                    </maps:Map>
+                    </local:ExtendedMap>
+
+                    
                 </StackLayout>
 
 

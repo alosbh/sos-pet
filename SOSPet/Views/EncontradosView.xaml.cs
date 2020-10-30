@@ -106,6 +106,8 @@ namespace SOSPet.Views
                 Navigation.PushAsync(tela);
             });
 
+            
+
             MessagingCenter.Subscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias", (ocorrencias) =>
             {
 
