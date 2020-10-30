@@ -109,7 +109,7 @@ namespace SOSPet.Views
             MessagingCenter.Subscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias", (ocorrencias) =>
             {
 
-                foreach (var ocorr in Ocorrencias)
+                foreach (var ocorr in ocorrencias)
                 {
                     var pin = new Pin
                     {
