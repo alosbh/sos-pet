@@ -69,7 +69,6 @@
                     VerticalOptions="FillAndExpand"
                     HeightRequest="200"
                     >
-
                     </maps:Map>
                 </StackLayout>
 

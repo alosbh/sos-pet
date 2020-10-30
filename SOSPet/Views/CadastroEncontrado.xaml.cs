@@ -52,7 +52,7 @@ namespace SOSPet.Views
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "Unable to get actual location", "Ok");
+                await DisplayAlert("Erro", "Não foi possível localizar", "Ok");
             }
         }
 
