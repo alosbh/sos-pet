@@ -63,7 +63,7 @@ namespace SOSPet.Views
                     Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
                     Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(
                 new Position(location.Latitude, location.Longitude),
-                Distance.FromMiles(0.5)));
+                Distance.FromKilometers(0.5)));
 
                     
                 }

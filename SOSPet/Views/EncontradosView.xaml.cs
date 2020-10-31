@@ -27,43 +27,6 @@ namespace SOSPet.Views
             
 
 
-            var pin = new Pin
-            {
-                Type = PinType.Place,
-                Position = new Position(-19.947316, -43.971500),
-                Label = "PRIMEIRO pin",
-
-            };
-            pin.MarkerClicked += (sender, e) => {
-
-                Navigation.PushAsync(new DetalheEncontrado(pin.Label));
-            };
-            Mapa.Pins.Add(pin);
-            var pin2 = new Pin
-            {
-                Type = PinType.Place,
-                Position = new Position(-19.944862, -43.974667),
-                Label = "SEGUNDO pin",
-
-            };
-            pin2.MarkerClicked += (sender, e) => {
-
-                Navigation.PushAsync(new DetalheEncontrado(pin2.Label));
-            };
-            Mapa.Pins.Add(pin2);
-
-            var pin3 = new Pin
-            {
-                Type = PinType.Place,
-                Position = new Position(-19.947787, -43.968273),
-                Label = "TERCEIRO pin",
-
-            };
-            pin3.MarkerClicked += (sender, e) => {
-
-                Navigation.PushAsync(new DetalheEncontrado(pin3.Label));
-            };
-            Mapa.Pins.Add(pin3);
         }
 
         public async void irParaLocation()
@@ -118,14 +81,15 @@ namespace SOSPet.Views
                         Type = PinType.Place,
                         Position = new Position(ocorr.latitude, ocorr.longitude),
                         Label = ocorr.descricao,
-
+                        BindingContext = ocorr
                     };
                     pin.MarkerClicked += (sender, e) => {
 
-                        Navigation.PushAsync(new DetalheEncontrado(pin.Label));
+                        Navigation.PushAsync(new DetalheEncontrado((Ocorrencia)pin.BindingContext));
                     };
                     Mapa.Pins.Add(pin);
                 }
+                ContagemOcorrencia.Text = ocorrencias.Length.ToString();
 
 
                 

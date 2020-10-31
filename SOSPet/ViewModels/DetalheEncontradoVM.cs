@@ -8,7 +8,7 @@ using Xamarin.Forms.Maps;
 
 namespace SOSPet.ViewModels
 {
-    public class CadastroEncontradoViewModel : BaseViewModel
+    public class DetalheEncontradoVM : BaseViewModel
     {
         private Ocorrencia ocorrencia;
         
@@ -90,7 +90,7 @@ namespace SOSPet.ViewModels
             }
         }
         public ICommand ConcluirCadastroCommand { get; private set; }
-        public CadastroEncontradoViewModel()
+        public DetalheEncontradoVM(Ocorrencia oc)
         {
 
 

@@ -59,18 +59,19 @@
 
 
                 </StackLayout>
-                <StackLayout>
-                    <StackLayout Orientation="Horizontal">
+                
+                    
                         <StackLayout>
                             <Label Text="Raça:"></Label>
                             <Entry Placeholder="SRD, Siamês, Golden" Text="{Binding Raca}"/>
                         </StackLayout>
                         <StackLayout>
                             <Label Text="Descrição:"></Label>
-                            <Entry Placeholder="Cadela fêmea encontrada proximo ao parque ecológico." Text="{Binding Descricao}"/>
+                            <Editor Placeholder="Cadela fêmea encontrada proximo ao parque ecológico." Text="{Binding Descricao}"/>
+                            
                         </StackLayout>
-                    </StackLayout>
-                </StackLayout>
+                    
+                
 
                 <!--<StackLayout>
                     <Label Text="Descrição"></Label>
