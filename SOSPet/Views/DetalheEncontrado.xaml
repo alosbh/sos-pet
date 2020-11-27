@@ -10,16 +10,16 @@
         <ScrollView>
             <StackLayout Margin="30,0,30,30">
 
-                <!-- Imagem Início -->
+                <!-- Imagem -->
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
                     <Frame CornerRadius="10" Padding="0" HasShadow="False">
                         <Image Source="https://love.doghero.com.br/wp-content/uploads/2018/03/akita-1-e1542040695271.webp" HeightRequest="200"/>
                     </Frame>
                 </StackLayout>
-                <!-- Imagem Final -->
 
-                <!-- Informações Início -->
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                    
+                    <!-- Espécie -->
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Espécie:" TextColor="#000000" FontAttributes="Bold"/>
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -27,6 +27,7 @@
                         </Frame>
                     </StackLayout>
 
+                    <!-- Porte -->
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Porte:" TextColor="#000000" FontAttributes="Bold"/>
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -34,6 +35,7 @@
                         </Frame>
                     </StackLayout>
 
+                    <!-- Data -->
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Localizado em:" TextColor="#000000" FontAttributes="Bold"/>
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -41,9 +43,8 @@
                         </Frame>
                     </StackLayout>
                 </StackLayout>
-                <!-- Informações Final -->
 
-                <!-- Ponto de Referência e Descrição Início -->
+                <!-- Ponto de Referência -->
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Label Text="Ponto de referência:" TextColor="#000000" FontAttributes="Bold"/>
                     <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -51,6 +52,7 @@
                     </Frame>
                 </StackLayout>
 
+                <!-- Descrição -->
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Label Text="Descrição:" TextColor="#000000" FontAttributes="Bold"/>
                     <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -58,9 +60,8 @@
                        BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="80" Padding="5"/>
                     </Frame>
                 </StackLayout>
-                <!-- Ponto de Referência e Descrição Final -->
 
-                <!-- Contato Início -->
+                <!-- Contato -->
                 <StackLayout Orientation="Horizontal">
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Contato" TextColor="#000000" FontAttributes="Bold"/>
@@ -85,9 +86,8 @@
                         </Frame>
                     </StackLayout>
                 </StackLayout>
-                <!-- Contato Final -->
 
-                <!-- WPP/Email Início -->
+                <!-- WPP/Email Início
                 <StackLayout Orientation="Horizontal">
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
@@ -100,7 +100,7 @@
                         </Frame>
                     </StackLayout>
                 </StackLayout>
-                <!-- WPP/Email Final -->
+                -->
 
             </StackLayout>
 

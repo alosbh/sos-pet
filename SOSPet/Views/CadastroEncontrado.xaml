@@ -13,67 +13,95 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="30">
-                <Frame  HeightRequest="100" BackgroundColor="#d5d5d5">
+
+                <!-- Imagem -->
+                <Frame HeightRequest="100" BackgroundColor="#d5d5d5" CornerRadius="5" HasShadow="False">
                     <StackLayout>
                         <Image Source="camera.png"></Image>
-                        <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos"></Label>
+                        <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos" TextColor="#000000" FontAttributes="Bold"></Label>
                     </StackLayout>
                 </Frame>
-
+                
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                    
+                    <!-- Espécie -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Espécie:"></Label>
-                        <Picker Title="Espécie" x:Name="Espécie" SelectedItem="{Binding Especie}">
-                            <Picker.Items>
-                                <x:String>Cachorro</x:String>
-                                <x:String>Gato</x:String>
-                                <x:String>Aves</x:String>
-                                <x:String>Roedores</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        <Label Text="Espécie:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Picker Title="Espécie" x:Name="Espécie" SelectedItem="{Binding Especie}" BackgroundColor="#d5d5d5" TextColor="#000000">
+                                <Picker.Items>
+                                    <x:String>Cachorro</x:String>
+                                    <x:String>Gato</x:String>
+                                    <x:String>Aves</x:String>
+                                    <x:String>Roedores</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
                     </StackLayout>
 
+                    <!-- Porte -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Porte:"></Label>
-                        <Picker Title="Porte" x:Name="Porte" SelectedIndex="{Binding Porte}">
-                            <Picker.Items>
-                                <x:String>G</x:String>
-                                <x:String>M</x:String>
-                                <x:String>P</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        <Label Text="Porte:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Picker Title="Porte" x:Name="Porte" SelectedIndex="{Binding Porte}" BackgroundColor="#d5d5d5" TextColor="#000000">
+                                <Picker.Items>
+                                    <x:String>G</x:String>
+                                    <x:String>M</x:String>
+                                    <x:String>P</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
                     </StackLayout>
+                    
+                    <!-- Data -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Localizado em:"></Label>
-                        <DatePicker ></DatePicker>
+                        <Label Text="Localizado em:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <DatePicker BackgroundColor="#d5d5d5" TextColor="#000000"></DatePicker>
+                        </Frame>
                     </StackLayout>
                 </StackLayout>
 
                 <StackLayout>
+                    
+                    <!-- Raça -->
                     <StackLayout>
-                        <Label Text="Raça:"></Label>
-                        <Entry Placeholder="SRD, Siamês, Golden" Text="{Binding Raca}"/>
+                        <Label Text="Raça:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Editor MinimumHeightRequest="40" Placeholder="SRD, Siamês, Golden" Text="{Binding Raca}" BackgroundColor="#d5d5d5" TextColor="#000000"/>
+                        </Frame>
                     </StackLayout>
+                    
+                    <!-- Descrição -->
                     <StackLayout>
-                        <Label Text="Descrição:"></Label>
-                        <Entry Placeholder="Cadela fêmea encontrada proximo ao parque ecológico." Text="{Binding Descricao}"/>
+                        <Label Text="Descrição:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Editor MinimumHeightRequest="200" Placeholder="Cadela fêmea encontrada proximo ao parque ecológico." Text="{Binding Descricao}" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="100"/>
+                        </Frame>
                     </StackLayout>                    
                 </StackLayout>
                 
+                <!-- Mapa -->
                 <StackLayout>
-                    <Label Text="Selecione a localização:"></Label>
-                    <maps:Map x:Name="Mapa" MapType="Street" Tap="Mapa_OnTap"
+                    <Label Text="Selecione a localização:" TextColor="#000000" FontAttributes="Bold"></Label>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                        <maps:Map x:Name="Mapa" MapType="Street"
                     IsShowingUser="true"                               
                     ItemsSource="{Binding Localizacao}"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     HeightRequest="200"
                     >
-                    </maps:Map>
+                        </maps:Map>
+                    </Frame>
                 </StackLayout>
 
+                <!-- Botão Cadastro -->
                 <StackLayout>
-                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroEncontradoCommand}"></Button>
+                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroEncontradoCommand}"
+                    TextColor="#000000"
+                    BackgroundColor="#2fdf8d"
+                    CornerRadius="10"></Button>
                 </StackLayout>
                 
 

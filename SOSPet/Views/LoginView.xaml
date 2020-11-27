@@ -2,34 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SOSPet.Views.LoginView"
-             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+             xmlns:vm="clr-namespace:SOSPet.ViewModels"
+             NavigationPage.HasNavigationBar="false"
+             >
 
     <ContentPage.BindingContext>
         <vm:LoginViewModel></vm:LoginViewModel>
     </ContentPage.BindingContext>
         <StackLayout VerticalOptions="Center" Margin="40">
-            <Image Source="pawprint.png" ></Image>
-        <Label Text="SOS PET" FontSize="24" HorizontalOptions="Center" FontFamily="Roboto" FontAttributes="Bold"></Label>
+            <Image Source="greenpaw.png" HeightRequest="140" WidthRequest="140"></Image>
+            <Label Text="SOS PET" FontSize="50" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#2fdf8d"></Label>
             
-            <Entry Placeholder="Usuário" Text="{Binding Usuario}" ></Entry>
-            <Entry Placeholder="Senha" Text="{Binding Senha}" IsPassword="True"></Entry>
+            <Entry Placeholder="Usuário" Text="{Binding Usuario}" TextColor="#000000" ></Entry>
+            <Entry Placeholder="Senha" Text="{Binding Senha}" IsPassword="True" TextColor="#000000"></Entry>
             <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
 
                 <StackLayout Orientation="Horizontal">
-                    <Switch IsToggled="True"></Switch>
-                    <Label VerticalTextAlignment="Center" Text="Lembrar"></Label>
+                <Switch IsToggled="True" OnColor="#000000" ThumbColor="#2fdf8d"></Switch>
+                <Label VerticalTextAlignment="Center" Text="Lembrar" TextColor="#2fdf8d"></Label>
                 </StackLayout>
 
-            <Label Text="Esqueci a Senha" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center">
+            <Label Text="Esqueci a Senha" HorizontalOptions="EndAndExpand" VerticalTextAlignment="Center" TextColor="#2fdf8d">
                 <!--<Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="IrParaTelaRecuperarSenha"></TapGestureRecognizer>
                         </Label.GestureRecognizers>-->
             </Label>
 
-        </StackLayout>
+            </StackLayout>
 
-        <Button Text="Login" Command="{Binding EntrarCommand}"></Button>
-            <Label Text="Não tenho cadastro" HorizontalOptions="Center">
+            <Button Text="Login" Command="{Binding EntrarCommand}"
+            TextColor="#000000"
+            BackgroundColor="#2fdf8d"
+            CornerRadius="10">            
+            </Button>
+            
+            <Label Text="Não tenho cadastro." HorizontalOptions="Center" TextColor="#2fdf8d">
                 <Label.GestureRecognizers>
                 <TapGestureRecognizer Command="{Binding IrCadastroCommand}"></TapGestureRecognizer>
                 </Label.GestureRecognizers>

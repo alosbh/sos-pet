@@ -14,7 +14,11 @@ namespace SOSPet.Views
     {
         public MenuLateralView()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }        
+        private void IrTelaEncontrados(object sender, EventArgs e)
+        {
+             Navigation.PushAsync(new EncontradosView());
         }
     }
 }

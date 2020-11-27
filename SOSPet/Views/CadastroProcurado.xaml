@@ -13,71 +13,92 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Margin="30">
-                <!-- Imagem Início -->
-                <Frame  HeightRequest="100" BackgroundColor="#d5d5d5">
+                
+                <!-- Imagem -->
+                <Frame HeightRequest="100" BackgroundColor="#d5d5d5" CornerRadius="5" HasShadow="False">
                     <StackLayout>
                         <Image Source="camera.png"></Image>
-                        <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos"></Label>
+                        <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos" TextColor="#000000" FontAttributes="Bold"></Label>
                     </StackLayout>
                 </Frame>
-                <!-- Imagem Final -->
-
-                <!-- Informações Início -->
+               
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
+                    
+                    <!-- Espécie -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Espécie:"></Label>
-                        <Picker Title="Espécie" x:Name="Espécie">
-                            <Picker.Items>
-                                <x:String>Cachorro</x:String>
-                                <x:String>Gato</x:String>
-                                <x:String>Aves</x:String>
-                                <x:String>Roedores</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        <Label Text="Espécie:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Picker Title="Espécie" x:Name="Espécie" BackgroundColor="#d5d5d5" TextColor="#000000">
+                                <Picker.Items>
+                                    <x:String>Cachorro</x:String>
+                                    <x:String>Gato</x:String>
+                                    <x:String>Aves</x:String>
+                                    <x:String>Roedores</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
                     </StackLayout>
 
+                    <!-- Porte -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Porte:"></Label>
-                        <Picker Title="Porte" x:Name="Porte" >
-                            <Picker.Items>
-                                <x:String>Grande</x:String>
-                                <x:String>Medio</x:String>
-                                <x:String>Pequeno</x:String>
-                            </Picker.Items>
-                        </Picker>
+                        <Label Text="Porte:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <Picker Title="Porte" x:Name="Porte" BackgroundColor="#d5d5d5" TextColor="#000000">
+                                <Picker.Items>
+                                    <x:String>Grande</x:String>
+                                    <x:String>Medio</x:String>
+                                    <x:String>Pequeno</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Frame>
                     </StackLayout>
+                    
+                    <!-- Data -->
                     <StackLayout HorizontalOptions="FillAndExpand">
-                        <Label Text="Desaparecido em:"></Label>
-                        <DatePicker>
+                        <Label Text="Desaparecido em:" TextColor="#000000" FontAttributes="Bold"></Label>
+                        <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                            <DatePicker BackgroundColor="#d5d5d5" TextColor="#000000">
 
-                        </DatePicker>
+                            </DatePicker>
+                        </Frame>
                     </StackLayout>
                 </StackLayout>
-
+                
+                <!-- Nome -->
                 <StackLayout HorizontalOptions="FillAndExpand">
-                    <Label Text="Atende pelo nome de:"/>
-                    <Editor MinimumHeightRequest="40" Placeholder="Exemplo: Juninho"/>                    
+                    <Label Text="Atende pelo nome de:" TextColor="#000000" FontAttributes="Bold"/>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                        <Editor MinimumHeightRequest="40" Placeholder="Exemplo: Juninho" BackgroundColor="#d5d5d5" TextColor="#000000"/>
+                    </Frame>
                 </StackLayout>
-                <!-- Informações Final -->
 
-                <!-- Descrição e Localização Início -->
+                <!-- Descrição -->
                 <StackLayout>
-                    <Label Text="Descrição"></Label>
-                    <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." />
+                    <Label Text="Descrição:" TextColor="#000000" FontAttributes="Bold"></Label>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                        <Editor MinimumHeightRequest="200" Placeholder="Exemplo: Cadela femea encontrada proximo ao parque ecológico." BackgroundColor="#d5d5d5" TextColor="#000000"/>
+                    </Frame>
                 </StackLayout>
+                
+                <!-- Mapa -->
                 <StackLayout>
-                    <Label Text="Selecione a localização:"></Label>
-                    <maps:Map x:Name="Mapa" MapType="Street"                
+                    <Label Text="Selecione a localização:" TextColor="#000000" FontAttributes="Bold"></Label>
+                    <Frame CornerRadius="5" Padding="0" HasShadow="False">
+                        <maps:Map x:Name="Mapa" MapType="Street"                
                         IsShowingUser="true"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"
                         HeightRequest="200">
-                    </maps:Map>
+                        </maps:Map>
+                    </Frame>
                 </StackLayout>
-                <!-- Descrição e Localização Final -->
-
+                
+                <!-- Botão Cadastro -->
                 <StackLayout>
-                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroProcuradoCommand}"></Button>
+                    <Button Text="Cadastrar" Command="{Binding ConcluirCadastroProcuradoCommand}"
+                    TextColor="#000000"
+                    BackgroundColor="#2fdf8d"
+                    CornerRadius="10"></Button>
                 </StackLayout>
 
 

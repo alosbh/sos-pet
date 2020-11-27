@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOSPet.Views.HomeView"
+             Title="Home">
+    
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout Padding="32">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,15">
+                    <Image Source="paw.png" HeightRequest="35" WidthRequest="35"/>
+                    <Label Text="SOS PET" FontSize="30" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#2fdf8d"></Label>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
+                    <Label Text="Bem vindo," FontSize="16" TextColor="#000000"/>
+                    <Label Text="Nome" FontSize="19" TextColor="#2fdf8d" FontAttributes="Bold"/>
+                    <Label Text="!" FontSize="19" TextColor="#2fdf8d" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,0,0,15">
+                <Label Text="Nossa missão é conectar pessoas que perderam seus pets, ou que encontraram algum pet abandonado e precisam de ajuda àquelas que pretendem ajudar."
+                TextColor="#000000"
+                FontSize="16"/>
+                </StackLayout>
+
+
+
+
+
+            </StackLayout>
+
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

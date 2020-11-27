@@ -13,8 +13,6 @@ namespace SOSPet
         {
             InitializeComponent();
 
-
-            //MainPage = new NavigationPage(new ProcuradosView());
             MainPage = new NavigationPage(new LoginView());
         }
 
@@ -22,7 +20,7 @@ namespace SOSPet
         {
             MessagingCenter.Subscribe<Login>(this, "NavegarInicial", (login) => {
 
-                MainPage = new MasterDetailView();
+                MainPage = new NavigationPage(new MasterDetailView());
 
                 Debug.WriteLine("Teste");
 
