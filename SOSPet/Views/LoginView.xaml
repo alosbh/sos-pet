@@ -13,9 +13,21 @@
         <StackLayout VerticalOptions="Center" Margin="40">
             <Image Source="greenpaw.png" HeightRequest="140" WidthRequest="140"></Image>
             <Label Text="SOS PET" FontSize="50" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#2fdf8d"></Label>
-            
-            <Entry Placeholder="Usuário" Text="{Binding Usuario}" TextColor="#000000" ></Entry>
-            <Entry Placeholder="Senha" Text="{Binding Senha}" IsPassword="True" TextColor="#000000"></Entry>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" Orientation="Horizontal" Margin="0,10,0,0">
+
+            <Entry Text="{Binding Usuario}" TextColor="Black" Placeholder="Usuário" HorizontalOptions="StartAndExpand" HeightRequest="40" WidthRequest="300"/>
+            <Image Source="usuario.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="End" VerticalOptions="Center"/>
+
+        </StackLayout>
+
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" Orientation="Horizontal" Margin="0,10,0,0">
+
+            <Entry Text="{Binding Senha}" TextColor="Black" Placeholder="Senha" IsPassword="True" HorizontalOptions="StartAndExpand" HeightRequest="40" WidthRequest="300"/>
+            <Image Source="cadeado.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="End" VerticalOptions="Center"/>
+
+        </StackLayout>
+        
             <StackLayout Orientation="Horizontal" Margin="0,0,0,50">
 
                 <StackLayout Orientation="Horizontal">

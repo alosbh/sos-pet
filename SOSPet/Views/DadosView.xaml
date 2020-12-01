@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SOSPet.Views.DadosView">
+             x:Class="SOSPet.Views.DadosView"
+             Title="Meus Dados">
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            
+            <StackLayout HorizontalOptions="Center" Margin="40,15,40,40">
+
+                <StackLayout Padding="0,0,0,10">
+                    <Frame CornerRadius="100" 
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    Padding="0"
+                    IsClippedToBounds="True">
+                        <Image Source="https://www.psicologo.com.br/wp-content/uploads/sou-uma-pessoa-boa-ou-nao-1024x538.jpg" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        HeightRequest="100"
+                        WidthRequest="100" />
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" Orientation="Horizontal" Margin="0,10,0,0">
+
+                    <Image Source="email.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="E-mail: " TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="teste@gmail.com" TextColor="Black" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"/>
+
+                </StackLayout>
+
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" Orientation="Horizontal" Margin="0,10,0,0">
+
+                    <Image Source="usuario.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Nome: " TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="Igor Sena" TextColor="Black" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"/>
+
+                </StackLayout>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="330" Orientation="Horizontal" Margin="0,10,0,0">
+
+                    <Image Source="telefone.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Telefone: " TextColor="Black" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <Label Text="31999999999" TextColor="Black" HorizontalOptions="Center" FontSize="20" VerticalOptions="Center"/>
+
+                </StackLayout>
+                
+            </StackLayout>
+            
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

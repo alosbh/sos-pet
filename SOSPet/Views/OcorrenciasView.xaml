@@ -1,12 +1,162 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SOSPet.Views.OcorrenciasView">
+             x:Class="SOSPet.Views.OcorrenciasView"
+             Title="Minhas Ocorrências">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                     Orientation="Vertical"
+                     BackgroundColor="Transparent"
+                     RelativeLayout.WidthConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                     RelativeLayout.HeightConstraint= "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+
+            <ListView         IsVisible="true"
+                              ItemsSource="{Binding Ocorrencias}"
+                              HasUnevenRows="true" 
+                              SeparatorVisibility="None"
+                                  VerticalOptions="FillAndExpand"                                  
+                                  BackgroundColor="Transparent"
+                                  SelectionMode="None">
+                <x:Arguments>
+                    <ListViewCachingStrategy>RecycleElement</ListViewCachingStrategy>
+                </x:Arguments>
+
+
+                <!-- ITENS da LISTA : Cards (frames) de cada ocorrencia -->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+
+                                <Frame Padding="0,0,0,0" CornerRadius="0" HasShadow="True"
+                                                   BackgroundColor="#FFF"                                                   
+                                                   IsClippedToBounds="True"
+                                                   BorderColor="Transparent">
+                                    <Frame.OutlineColor>
+                                        <OnPlatform x:TypeArguments="Color"  Android="LightGray"  iOS="LightGray"/>
+                                    </Frame.OutlineColor>
+                                    <Frame.Margin>
+                                        <OnPlatform x:TypeArguments="Thickness" Android="15,0,15,20" iOS="15,0,15,20" />
+                                    </Frame.Margin>
+
+
+                                    <StackLayout HorizontalOptions="FillAndExpand"
+                                                                VerticalOptions="FillAndExpand"
+                                                                Orientation="Vertical"
+                                                                BackgroundColor="White"
+                                                                Padding="25,5,0,20"
+                                                                Spacing="0">
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Espécie: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Especie}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Porte: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Porte}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Localizado em: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Data}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Nome: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Nome}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Ponto de Referência: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Referencia}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,0,5,0">
+
+                                            <Label          Text="Descrição: " 
+                                                            FontAttributes="Bold" 
+                                                            FontSize="Medium"
+                                                            TextColor="#000"/>
+                                            <Label          Text="{Binding Descricao}"                                                             
+                                                            FontAttributes="None" 
+                                                            FontSize="Medium"
+                                                            TextColor="#2fdf8d"/>
+
+                                        </StackLayout>
+
+                                            <Button     Text="Excluir"
+                                                        IsVisible="true"
+                                                        BackgroundColor="#2fdf8d"
+                                                        TextColor="Black"
+                                                        HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                            />
+
+                                            <StackLayout.Margin>
+                                            <OnPlatform x:TypeArguments="Thickness" Android="10,0,0,0" iOS="10,0,0,0" />
+                                        </StackLayout.Margin>
+
+                                    </StackLayout>
+
+                                <!--
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={x:Reference ListarTodosAlunosPage}, Path=BindingContext.ExibirDetalhesAlunoCommand}"   CommandParameter="{Binding .}"   NumberOfTapsRequired="1" />
+                                </Frame.GestureRecognizers>
+                                -->
+
+
+                                </Frame>
+
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>
