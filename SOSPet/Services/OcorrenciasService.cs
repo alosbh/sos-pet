@@ -12,7 +12,7 @@ namespace SOSPet.Models
 {
     class OcorrenciasService
     {
-        private readonly string baseUrl = "http://192.168.0.6:5000";
+        private readonly string baseUrl = "http://192.168.43.209:5000";
 
         public async Task getEncontrados()
         {

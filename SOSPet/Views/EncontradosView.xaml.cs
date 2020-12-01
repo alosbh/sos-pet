@@ -24,7 +24,31 @@ namespace SOSPet.Views
             this.Ocorrencias = new System.Collections.ObjectModel.ObservableCollection<Ocorrencia>();
 
             irParaLocation();
-            
+
+            MessagingCenter.Subscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias", (ocorrencias) =>
+            {
+
+                foreach (var ocorr in ocorrencias)
+                {
+                    var pin = new Pin
+                    {
+                        Type = PinType.Place,
+                        Position = new Position(ocorr.latitude, ocorr.longitude),
+                        Label = ocorr.descricao,
+                        BindingContext = ocorr
+                    };
+                    pin.MarkerClicked += (sender, e) => {
+
+                        Navigation.PushAsync(new DetalheEncontrado((Ocorrencia)pin.BindingContext));
+                    };
+                    Mapa.Pins.Add(pin);
+                }
+                ContagemOcorrencia.Text = ocorrencias.Length.ToString();
+
+
+
+            });
+
 
 
         }
