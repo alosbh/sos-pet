@@ -10,7 +10,7 @@
             <StackLayout Padding="32">
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,0,0,15">
-                    <Image Source="paw.png" HeightRequest="35" WidthRequest="35"/>
+                    <Image Source="greenpaw.png" HeightRequest="35" WidthRequest="35"/>
                     <Label Text="SOS PET" FontSize="30" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#2fdf8d"></Label>
                 </StackLayout>
 
@@ -26,9 +26,80 @@
                 FontSize="16"/>
                 </StackLayout>
 
+                <StackLayout Padding="0,0,0,15" Orientation="Horizontal">
+                    <Frame CornerRadius="30" 
+                    HeightRequest="85"
+                    WidthRequest="165"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    IsClippedToBounds="True"
+                    BackgroundColor="#d5d5d5"
+                    Margin="0,0,15,0">
+                        <StackLayout>
+                            <Label Text="13" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets encontrados." FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                        </StackLayout>
+                    </Frame>
 
+                    <Frame CornerRadius="30" 
+                    HeightRequest="90"
+                    WidthRequest="165"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    IsClippedToBounds="True"
+                    BackgroundColor="#d5d5d5">
+                        <StackLayout>
+                            <Label Text="8" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets localizados." FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
 
+                <StackLayout Padding="0,0,0,15" Orientation="Horizontal">
+                    <Frame CornerRadius="30" 
+                    HeightRequest="90"
+                    WidthRequest="165"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    IsClippedToBounds="True"
+                    BackgroundColor="#d5d5d5"
+                    Margin="0,0,15,0">
+                        <StackLayout>
+                            <Label Text="21" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets de volta ao lar!" FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                        </StackLayout>
+                    </Frame>
 
+                    <Frame CornerRadius="30" 
+                    HeightRequest="90"
+                    WidthRequest="165"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    IsClippedToBounds="True"
+                    BackgroundColor="#d5d5d5">
+                        <StackLayout>
+                            <Label Text="42" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets resgatados!" FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Padding="0,0,0,20" Orientation="Horizontal">
+                    <Frame CornerRadius="15"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Padding="0"
+                    IsClippedToBounds="True"
+                    HasShadow="True">
+                        <Image Source="explorer.png"
+                               HeightRequest="150"
+                               WidthRequest="350">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="IrTelaEncontrados"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Frame>
+                </StackLayout>
 
             </StackLayout>
 

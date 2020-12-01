@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SOSPet.Views.SobreView"
+             NavigationPage.BackButtonTitle="Voltar">
+    
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2fdf8d">
+            <StackLayout VerticalOptions="Center" Margin="40">
+            
+                <Image Source="icon.png" HeightRequest="140" WidthRequest="140"></Image>
+                <Label Text="SOS PET" FontSize="50" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#FFFFFF"></Label>
+
+                <StackLayout Orientation="Vertical">
+
+                    <Label Text="SOS Pet é um app desenvolvido pelos alunos da PUC Minas Unidade de Contagem, para a disciplina de Laboratório de Desenvolvimento de Sistemas de Informação 2020/2."
+                    TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+                    <Label Text="Alunos" TextColor="#FFFFFF" FontSize="20" HorizontalOptions="Center" FontAttributes="Bold"/>
+                    <Label Text="André Lara" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+                    <Label Text="Igor Sena" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+                    <Label Text="Rafael Siqueira" TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center"/>
+                    <Label Text="Aplicativo em Beta." TextColor="#FFFFFF" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                </StackLayout>            
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

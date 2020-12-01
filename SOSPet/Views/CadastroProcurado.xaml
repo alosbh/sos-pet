@@ -4,7 +4,8 @@
              x:Class="SOSPet.Views.CadastroProcurado"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              Title="Cadastrar Animal Desaparecido"
-             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+             xmlns:vm="clr-namespace:SOSPet.ViewModels"
+             NavigationPage.BackButtonTitle="Voltar">
 
     <ContentPage.BindingContext>
         <vm:CadastroProcuradoViewModel></vm:CadastroProcuradoViewModel>

@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace SOSPet.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeView : ContentPage
+    public partial class DadosView : ContentPage
     {
-        public HomeView()
+        public DadosView()
         {
             InitializeComponent();
-        }
-        private void IrTelaEncontrados(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new EncontradosView());
         }
     }
 }

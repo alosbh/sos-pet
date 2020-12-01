@@ -4,7 +4,8 @@
              x:Class="SOSPet.Views.ProcuradosView"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              Title="Animais Desaparecidos Encontrados"
-             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+             xmlns:vm="clr-namespace:SOSPet.ViewModels"
+             NavigationPage.BackButtonTitle="Voltar">
     
     <ContentPage.BindingContext>
         <vm:ProcuradosViewModel></vm:ProcuradosViewModel>

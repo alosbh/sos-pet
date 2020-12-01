@@ -24,21 +24,21 @@
 
             <TableView Intent="Menu">
                 <TableSection>
-                    <ViewCell >
+                    <ViewCell Tapped="IrTelaHome">
                         <StackLayout Orientation="Horizontal" Padding="15,10">
                             <Image Source="home.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center"></Image>
                             <Label Text="Página Inicial" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </ViewCell>
 
-                    <ViewCell >
+                    <ViewCell Tapped="IrTelaDados">
                         <StackLayout Orientation="Horizontal" Padding="15,10">
                             <Image Source="avatar.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center"></Image>
                             <Label Text="Meus Dados" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </ViewCell>
 
-                    <ViewCell >
+                    <ViewCell Tapped="IrTelaOcorrencias">
                         <StackLayout Orientation="Horizontal" Padding="15,10">
                             <Image Source="list.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center"></Image>
                             <Label Text="Minhas Ocorrências" VerticalTextAlignment="Center"/>
@@ -52,7 +52,7 @@
                         </StackLayout>
                     </ViewCell>
 
-                    <ViewCell >
+                    <ViewCell Tapped="IrTelaSobre">
                         <StackLayout Orientation="Horizontal" Padding="15,10">
                             <Image Source="info.png" HeightRequest="20" WidthRequest="20" HorizontalOptions="Start" VerticalOptions="Center"></Image>
                             <Label Text="Sobre" VerticalTextAlignment="Center"/>

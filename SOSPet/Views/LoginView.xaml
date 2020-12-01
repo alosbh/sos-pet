@@ -9,6 +9,7 @@
     <ContentPage.BindingContext>
         <vm:LoginViewModel></vm:LoginViewModel>
     </ContentPage.BindingContext>
+    
         <StackLayout VerticalOptions="Center" Margin="40">
             <Image Source="greenpaw.png" HeightRequest="140" WidthRequest="140"></Image>
             <Label Text="SOS PET" FontSize="50" HorizontalOptions="Center" FontFamily="Cooper-Black" FontAttributes="Bold" TextColor="#2fdf8d"></Label>
