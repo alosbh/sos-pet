@@ -2,19 +2,19 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SOSPet.Views.MasterDetailView"
-                  xmlns:view="clr-namespace:SOSPet.Views">
+             xmlns:view="clr-namespace:SOSPet.Views"
+             NavigationPage.HasNavigationBar="False">
+    
     <MasterDetailPage.Master>
         <view:MenuLateralView></view:MenuLateralView>
-
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <view:EncontradosView></view:EncontradosView>
+                <view:HomeView></view:HomeView>
             </x:Arguments>
-        </NavigationPage>
-
-
+        </NavigationPage>        
     </MasterDetailPage.Detail>
+    
 </MasterDetailPage>

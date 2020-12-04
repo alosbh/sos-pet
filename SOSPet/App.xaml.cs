@@ -14,7 +14,8 @@ namespace SOSPet
             InitializeComponent();
 
 
-            //MainPage = new NavigationPage(new ProcuradosView());
+            //MainPage = new NavigationPage(new CadastroEncontrado());
+            //MainPage = new NavigationPage(new EncontradosView());
             MainPage = new NavigationPage(new LoginView());
         }
 

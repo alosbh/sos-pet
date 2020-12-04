@@ -1,4 +1,5 @@
-﻿using SOSPet.ViewModels;
+﻿using SOSPet.Models;
+using SOSPet.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,15 @@ namespace SOSPet.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DetalheEncontrado : ContentPage
     {
-        public string nome;
-        public DetalheEncontrado(string Nome)
+        public DetalheEncontradoViewModel ViewModel { get; set; }
+        public Ocorrencia Ocorr;
+        public DetalheEncontrado(Ocorrencia ocorrencia)
         {
             InitializeComponent();
-            this.BindingContext = new DetalheEncontradoViewModel("Juninho");
+            this.Ocorr = ocorrencia;
+
+            this.ViewModel = new DetalheEncontradoViewModel(ocorrencia);
+            this.BindingContext = this.ViewModel;
         }
     }
 }

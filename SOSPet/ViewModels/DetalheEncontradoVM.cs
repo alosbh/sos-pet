@@ -8,7 +8,7 @@ using Xamarin.Forms.Maps;
 
 namespace SOSPet.ViewModels
 {
-    public class CadastroEncontradoViewModel : BaseViewModel
+    public class DetalheEncontradoVM : BaseViewModel
     {
         private Ocorrencia ocorrencia;
         
@@ -53,19 +53,7 @@ namespace SOSPet.ViewModels
             }
             set
             {
-                if (value == "0")
-                {
-                    ocorrencia.animal.porte = "G";
-                }
-                else if (value == "1")
-                {
-                    ocorrencia.animal.porte = "M";
-                }
-                else if (value == "2")
-                {
-                    ocorrencia.animal.porte = "P";
-                }
-               
+                ocorrencia.animal.porte = value;
             }
         }
         public double Latitude
@@ -102,9 +90,7 @@ namespace SOSPet.ViewModels
             }
         }
         public ICommand ConcluirCadastroCommand { get; private set; }
-        public ICommand TirarFoto { get; private set; }
-        public ICommand SelecionarGaleria { get; private set; }
-        public CadastroEncontradoViewModel()
+        public DetalheEncontradoVM(Ocorrencia oc)
         {
 
 
@@ -136,20 +122,6 @@ namespace SOSPet.ViewModels
                 //&& !string.IsNullOrEmpty(usuario.nome)
                 // && !string.IsNullOrEmpty(usuario.telefone)
                 //  && !string.IsNullOrEmpty(usuario.senha);
-            });
-
-            TirarFoto = new Xamarin.Forms.Command(async () => {
-
-                MessagingCenter.Send<String>("hello", "TirarFoto");
-            
-            
-            });
-
-            SelecionarGaleria = new Xamarin.Forms.Command(async () => {
-
-
-
-
             });
         }
 

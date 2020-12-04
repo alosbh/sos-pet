@@ -4,7 +4,8 @@
              x:Class="SOSPet.Views.ProcuradosView"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              Title="Animais Desaparecidos Encontrados"
-             xmlns:vm="clr-namespace:SOSPet.ViewModels">
+             xmlns:vm="clr-namespace:SOSPet.ViewModels"
+             NavigationPage.BackButtonTitle="Voltar">
     
     <ContentPage.BindingContext>
         <vm:ProcuradosViewModel></vm:ProcuradosViewModel>
@@ -13,29 +14,31 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="32">
-                <Label Text="Navegue abaixo e veja os animais desaparecidos encontrados em sua regição" FontSize="16"></Label>
+                <Label Text="Navegue abaixo e veja os animais desaparecidos encontrados em sua regição" FontSize="16" TextColor="#000000"></Label>
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,3">
 
                     <StackLayout Orientation="Horizontal"  HorizontalOptions="Start" >
-                        <Label Text="3" FontSize="18" VerticalTextAlignment="Center" FontAttributes="Bold"></Label>
-                        <Label Text="Animais Localizados" FontSize="16" VerticalTextAlignment="Center"></Label>
+                        <Label Text="3" FontSize="18" VerticalTextAlignment="Center" FontAttributes="Bold" TextColor="#000000"></Label>
+                        <Label Text="Animais Localizados" FontSize="16" VerticalTextAlignment="Center" TextColor="#000000"></Label>
                     </StackLayout>
 
 
                     <StackLayout Orientation="Horizontal"  HorizontalOptions="EndAndExpand">
-                        <Label Text="Filtrar" VerticalTextAlignment="Center" FontSize="16"></Label>
+                        <Label Text="Filtrar" VerticalTextAlignment="Center" FontSize="16" TextColor="#000000"></Label>
                         <Image Source="filter.png"></Image>
                     </StackLayout>
                     
                 </StackLayout>
 
                 <!--<Grid>-->
-                <maps:Map x:Name="Mapa" MapType="Street"                
+                <Frame CornerRadius="10" Padding="0" HasShadow="False">
+                    <maps:Map x:Name="Mapa" MapType="Street"                
                     IsShowingUser="true"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand"
                     HeightRequest="400">
-                </maps:Map>
+                    </maps:Map>
+                </Frame>
 
                 <!--
                 <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
@@ -59,8 +62,8 @@
 
                         </Image.GestureRecognizers>
                     </Image>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">                        
-                        <Label Text="Ir Para Animais Abandonados" VerticalTextAlignment="Center" FontSize="16">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Label Text="Ir Para Animais Abandonados" VerticalTextAlignment="Center" FontSize="16" TextColor="#000000">
                             <Label.GestureRecognizers>
 
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"></TapGestureRecognizer>
