@@ -15,8 +15,11 @@
 
                 <!-- Imagem -->
                 <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
-                    <Frame CornerRadius="10" Padding="0" HasShadow="False">
-                        <Image Source="https://love.doghero.com.br/wp-content/uploads/2018/03/akita-1-e1542040695271.webp" HeightRequest="200"/>
+                    <Frame BorderColor="Green" CornerRadius="8" x:Name="icone_camera">
+                        
+                        <StackLayout WidthRequest="250" VerticalOptions="Center">
+                            <Image Source="camera.png" ></Image>
+                        </StackLayout>
                     </Frame>
                 </StackLayout>
 
@@ -26,7 +29,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Especie" TextColor="#000000" FontAttributes="Bold"/>
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
-                            <Label Text="" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
+                            <Label Text="Especie" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
                         </Frame>
                     </StackLayout>
 
@@ -34,7 +37,7 @@
                     <StackLayout HorizontalOptions="FillAndExpand">
                         <Label Text="Porte:" TextColor="#000000" FontAttributes="Bold"/>
                         <Frame CornerRadius="5" Padding="0" HasShadow="False">
-                            <Label Text="Médio" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
+                            <Label Text="Porte" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
                         </Frame>
                     </StackLayout>
 
@@ -48,18 +51,18 @@
                 </StackLayout>
 
                 <!-- Ponto de Referência -->
-                <StackLayout HorizontalOptions="FillAndExpand">
+                <!--<StackLayout HorizontalOptions="FillAndExpand">
                     <Label Text="Ponto de referência:" TextColor="#000000" FontAttributes="Bold"/>
                     <Frame CornerRadius="5" Padding="0" HasShadow="False">
-                        <Label Text="Próximo ao Parque Ecológico" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
+                        <Label Text="Ponto ref" BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="30" Padding="5"/>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
                 <!-- Descrição -->
                 <StackLayout HorizontalOptions="FillAndExpand">
                     <Label Text="Descrição:" TextColor="#000000" FontAttributes="Bold"/>
                     <Frame CornerRadius="5" Padding="0" HasShadow="False">
-                        <Label Text="Cadela fêmea bem magrinha foi encontrada na Av. Fria Lopes, indo sentindo entrada principal do parque ecológico."
+                        <Label Text="{Binding Descricao}"
                        BackgroundColor="#d5d5d5" TextColor="#000000" HeightRequest="80" Padding="5"/>
                     </Frame>
                 </StackLayout>

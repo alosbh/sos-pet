@@ -16,7 +16,7 @@
 
                 <StackLayout Orientation="Horizontal" Margin="0,0,0,15">
                     <Label Text="Bem vindo," FontSize="16" TextColor="#000000"/>
-                    <Label Text="Nome" FontSize="19" TextColor="#2fdf8d" FontAttributes="Bold"/>
+                    <Label Text="André" FontSize="19" TextColor="#2fdf8d" FontAttributes="Bold"/>
                     <Label Text="!" FontSize="19" TextColor="#2fdf8d" FontAttributes="Bold"/>
                 </StackLayout>
 
@@ -31,13 +31,13 @@
                     HeightRequest="85"
                     WidthRequest="165"
                     HorizontalOptions="Start"
-                    Padding="0"
+                    Padding="10"
                     IsClippedToBounds="True"
                     BackgroundColor="#d5d5d5"
                     Margin="0,0,15,0">
                         <StackLayout>
-                            <Label Text="13" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
-                            <Label Text="Pets encontrados." FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                            <Label Text="3" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets encontrados" FontSize="13" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
                         </StackLayout>
                     </Frame>
 
@@ -45,17 +45,17 @@
                     HeightRequest="90"
                     WidthRequest="165"
                     HorizontalOptions="Start"
-                    Padding="0"
+                    Padding="10"
                     IsClippedToBounds="True"
                     BackgroundColor="#d5d5d5">
                         <StackLayout>
-                            <Label Text="8" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
-                            <Label Text="Pets localizados." FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
+                            <Label Text="1" FontSize="36" TextColor="DarkGreen" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Start"/>
+                            <Label Text="Pets perdidos" FontSize="13" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
                         </StackLayout>
                     </Frame>
                 </StackLayout>
 
-                <StackLayout Padding="0,0,0,15" Orientation="Horizontal">
+                <!--<StackLayout Padding="0,0,0,15" Orientation="Horizontal">
                     <Frame CornerRadius="30" 
                     HeightRequest="90"
                     WidthRequest="165"
@@ -82,18 +82,18 @@
                             <Label Text="Pets resgatados!" FontSize="16" TextColor="#000000" HorizontalOptions="Center" VerticalOptions="End"></Label>
                         </StackLayout>
                     </Frame>
-                </StackLayout>
+                </StackLayout>-->
 
-                <StackLayout Padding="0,0,0,20" Orientation="Horizontal">
+                <StackLayout Padding="0,0,0,20" HorizontalOptions="Center" Orientation="Horizontal">
                     <Frame CornerRadius="15"
-                    HorizontalOptions="Start"
+                    HorizontalOptions="Center"
                     VerticalOptions="Center"
                     Padding="0"
                     IsClippedToBounds="True"
                     HasShadow="True">
                         <Image Source="explorer.png"
                                HeightRequest="150"
-                               WidthRequest="350">
+                               WidthRequest="300">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="IrTelaEncontrados"/>
                             </Image.GestureRecognizers>

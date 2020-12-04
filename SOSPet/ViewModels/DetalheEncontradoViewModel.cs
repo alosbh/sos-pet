@@ -24,7 +24,8 @@ namespace SOSPet.ViewModels
         {
             get
             {
-                return ocorrencia.animal.especie;
+                //return ocorrencia.animal.especie;
+                return "especie";
             }
             set
             {
@@ -35,7 +36,8 @@ namespace SOSPet.ViewModels
         {
             get
             {
-                return ocorrencia.animal.raca;
+                //return ocorrencia.animal.raca;
+                return "raca";
             }
             set
             {
@@ -46,7 +48,8 @@ namespace SOSPet.ViewModels
         {
             get
             {
-                return ocorrencia.animal.porte;
+                //return ocorrencia.animal.porte;
+                return "porte";
             }
             set
             {
@@ -58,7 +61,9 @@ namespace SOSPet.ViewModels
 
             this.ocorrencia = oc;
             //this.Especie = oc.animal.especie;
-            
+            //this.Porte = oc.animal.porte;
+            //this.Raca = oc.animal.raca;
+
         }
     }
 }

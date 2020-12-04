@@ -6,7 +6,8 @@
              Title="Cadastrar Animal Abandonado"
              xmlns:vm="clr-namespace:SOSPet.ViewModels"
              xmlns:local="clr-namespace:PinClickDemo"
-             NavigationPage.BackButtonTitle="Voltar">
+             NavigationPage.BackButtonTitle="Voltar"
+             xmlns:fr="clr-namespace:SOSPet.Renderer">
 
     <ContentPage.BindingContext>
         <vm:CadastroEncontradoViewModel></vm:CadastroEncontradoViewModel>
@@ -16,13 +17,29 @@
         <ScrollView>
             <StackLayout Margin="30">
 
-                <!-- Imagem -->
-                <Frame HeightRequest="100" BackgroundColor="#d5d5d5" CornerRadius="5" HasShadow="False">
-                    <StackLayout>
-                        <Image Source="camera.png"></Image>
-                        <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos" TextColor="#000000" FontAttributes="Bold"></Label>
+                <ScrollView x:Name="scroller" HorizontalOptions="Fill" Orientation="Horizontal">
+
+
+                    
+                    <StackLayout Orientation="Horizontal" x:Name="imgs_layout">
+
+                 
+                        <Frame BorderColor="Green" CornerRadius="8" x:Name="icone_camera">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer x:Name="taper" ></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <StackLayout VerticalOptions="Center">
+                                <Image Source="camera.png" ></Image>
+                                <Label HorizontalOptions="Center" FontSize="Medium" Text="Incluir Fotos" TextColor="#000000" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                        </Frame>
+                        
+                        
+                        
                     </StackLayout>
-                </Frame>
+                </ScrollView>
+
+             
                 
                 <StackLayout Orientation="Horizontal" Margin="0,20,0,0" >
                     
@@ -105,7 +122,8 @@
                     <Button Text="Cadastrar" Command="{Binding ConcluirCadastroCommand}"
                     TextColor="#000000"
                     BackgroundColor="#2fdf8d"
-                    CornerRadius="10"></Button>
+                    CornerRadius="8"
+                            ></Button>
                 </StackLayout>
                 
 

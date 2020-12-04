@@ -13,9 +13,6 @@ namespace SOSPet.Models
         public double latitude { get; set; }
         public double longitude { get; set; }
        
-        //public string especie { get; set; }
-        //public string porte { get; set; }
-        //public string raca { get; set; }
         public DateTime data_ocorrencia { get; set; }
 
         public Animal animal;

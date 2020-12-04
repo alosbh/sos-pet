@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CustomRenderer;
+using SOSPet.Models;
+using System;
+using System.Collections.Generic;
 using Xamarin.Forms.Maps;
 
 namespace PinClickDemo
@@ -7,6 +10,7 @@ namespace PinClickDemo
     {
         public event EventHandler<TapEventArgs> Tap;
 
+        public List<CustomPin> CustomPins { get; set; }
         public ExtendedMap()
         {
 

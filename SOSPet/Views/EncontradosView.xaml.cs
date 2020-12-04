@@ -25,6 +25,7 @@ namespace SOSPet.Views
 
             irParaLocation();
 
+
             MessagingCenter.Subscribe<Ocorrencia[]>(this, "SucessoListaOcorrencias", (ocorrencias) =>
             {
 
@@ -65,6 +66,9 @@ namespace SOSPet.Views
                     Mapa.MoveToRegion(MapSpan.FromCenterAndRadius(
                              new Position(location.Latitude, location.Longitude),
                              Distance.FromKilometers(0.5)));
+
+
+                    
                 }
             }
             catch (FeatureNotSupportedException fnsEx)

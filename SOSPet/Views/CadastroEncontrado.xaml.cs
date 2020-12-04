@@ -12,26 +12,72 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Forms.Markup;
 using Xamarin.Forms.Xaml;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace SOSPet.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroEncontrado : ContentPage
     {
-        //private ExtendedMap Mapa;
-        //public ViewModels = new CadastroEncontradoViewModel();
+        
+
         public CadastroEncontrado()
         {
             InitializeComponent();
 
-            //this.BindingContext = new CadastroEncontradoViewModel();
-            //Mapa = new ExtendedMap();
-            //Mapa.Tap += Mapa_OnTap;
-            //Mapa.HeightRequest = 200;
-            //Mapa.IsShowingUser = true;
+            taper.Tapped += async (sender, args) =>
+            {
 
-            //Content = Mapa;
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                {
+                    DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
+                }
+
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    AllowCropping = true,
+                    Directory = "Test",
+                    SaveToAlbum = true,
+                    CompressionQuality = 75,
+                    CustomPhotoSize = 50,
+                    PhotoSize = PhotoSize.MaxWidthHeight,
+                    MaxWidthHeight = 400,
+                    DefaultCamera = CameraDevice.Front
+                });
+
+                if (file == null)
+                    return;
+                var newframe = new Frame() { CornerRadius = 8 , Padding=0};
+
+
+                var fotografia = new Image() {
+
+                    Source = ImageSource.FromStream(() =>
+                    {
+                        var stream = file.GetStream();
+                        file.Dispose();
+                        return stream;
+                    })
+
+                 };
+                newframe.Content = fotografia;
+                
+                imgs_layout.Children.Add(newframe);
+
+                scroller.ScrollToAsync(icone_camera, ScrollToPosition.MakeVisible, false);
+
+
+
+
+
+            };
+
+            
         }
+
+        
 
         private void Mapa_OnTap(object sender, TapEventArgs e)
         {
@@ -100,6 +146,8 @@ namespace SOSPet.Views
                 DisplayAlert("Sucesso", "Cadastro realizado com sucesso!", "Ok");
                 Navigation.PopAsync();
             });
+
+            
         }
 
         protected override void OnDisappearing()
@@ -108,6 +156,12 @@ namespace SOSPet.Views
             MessagingCenter.Unsubscribe<Ocorrencia>(this, "SucessoCadastroEncontrado");
         }
 
-       
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            //BindingContext should not be null at this point
+            // and you may add your code here.
+        }
     }
 }

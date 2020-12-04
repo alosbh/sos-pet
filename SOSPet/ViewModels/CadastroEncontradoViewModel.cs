@@ -53,7 +53,19 @@ namespace SOSPet.ViewModels
             }
             set
             {
-                ocorrencia.animal.porte = value;
+                if (value == "0")
+                {
+                    ocorrencia.animal.porte = "G";
+                }
+                else if (value == "1")
+                {
+                    ocorrencia.animal.porte = "M";
+                }
+                else if (value == "2")
+                {
+                    ocorrencia.animal.porte = "P";
+                }
+               
             }
         }
         public double Latitude
@@ -90,6 +102,8 @@ namespace SOSPet.ViewModels
             }
         }
         public ICommand ConcluirCadastroCommand { get; private set; }
+        public ICommand TirarFoto { get; private set; }
+        public ICommand SelecionarGaleria { get; private set; }
         public CadastroEncontradoViewModel()
         {
 
@@ -122,6 +136,20 @@ namespace SOSPet.ViewModels
                 //&& !string.IsNullOrEmpty(usuario.nome)
                 // && !string.IsNullOrEmpty(usuario.telefone)
                 //  && !string.IsNullOrEmpty(usuario.senha);
+            });
+
+            TirarFoto = new Xamarin.Forms.Command(async () => {
+
+                MessagingCenter.Send<String>("hello", "TirarFoto");
+            
+            
+            });
+
+            SelecionarGaleria = new Xamarin.Forms.Command(async () => {
+
+
+
+
             });
         }
 
